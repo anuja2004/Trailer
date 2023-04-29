@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    background-image: url(shinu.jpg);
+}
+.container1{
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 255px;
+    height: 355px;
+    border-radius: 1em;
+    background: linear-gradient(50deg, #2a5a3b, #1e4886);
+    overflow: hidden;
+}
+.container1::before{
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 35px;
+    top: 0;
+    right: 35px;
+    transition: 1.9s;
+    background: linear-gradient(50deg, #00ff59, #02b3ff);
+    transform: rotate(-45deg) translate(0,-100px);
+}
+.card{
+    display: grid;
+    place-items: center;
+    width: 247px;
+    height: 347px;
+    background: #171614;
+    border-radius: .8em;
+    z-index: 1;
+    color: #858585;
+    overflow: hidden;
+    padding: 1em;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s ease;
+
+}
+.card:hover{
+    color: #fff;
+
+}
+.container1:hover::before{
+    animation: effect 1.9s;
+
+}
+@keyframes effect{
+    100%{
+        transform: rotate(-45deg) translate(0,450px);
+    }
+}
+.container {
+    width: 200px;
+    height: 60px;
+    margin: auto;
+    margin-top: 20%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+}
+.ball {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 50%;
+    left: 15%;
+    animation: ball .5s alternate infinite ease;
+}
+@keyframes ball {
+    0% {
+        top: 60px;
+        height: 5px;
+        border-radius: 50px 50px 25px 25px;
+        transform: scaleX(1.7);
+        background-color: #FF3EA5FF;
+    }
+    40% {
+        height: 20px;
+        border-radius: 50%;
+        transform: scaleX(1);
+        background-color: #EDFF00FF;
+    }
+    100% {
+        top: 0%;
+        background-color: #00A4CCFF;
+    }
+}
+.ball:nth-child(2) {
+    left: 45%;
+    animation-delay: .2s;
+}
+.ball:nth-child(3) {
+    left: auto;
+    right: 15%;
+    animation-delay: .3s;
+}
+.shadow {
+    width: 20px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #ffffff59;
+    position: absolute;
+    top: 62px;
+    z-index: -1;
+    left: 15%;
+    filter: blur(1px);
+    animation: shadow .5s alternate infinite ease;
+}
+@keyframes shadow {
+    0% {
+        transform: scaleX(1.5);
+        background-color: #ff3ea56b;
+    }
+    40% {
+        transform: scaleX(1);
+        opacity: .7;
+        background-color: #edff0066;
+    }
+    100% {
+        transform: scaleX(.2);
+        opacity: .4;
+        background-color: #00a4cc6b;
+    }
+}
+.shadow:nth-child(4) {
+    left: 45%;
+    animation-delay: .2s;
+}
+.shadow:nth-child(5) {
+    left: auto;
+    right: 15%;
+    animation-delay: .3s;
+}
